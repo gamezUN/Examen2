@@ -1,97 +1,129 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recibo telefonico</title>
-
+    <title>Recibo telefónico</title>
 
     <style>
-
-        body{
+        body {
             font-family: 'Times New Roman', Times, serif;
+            background-color: rgb(174, 195, 172);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor {
             background-color: rgb(119, 210, 112);
+            border: 3px solid black;
+            width: 10000px;
+            max-width: 85%;
+            margin: 30px auto;
+            padding: 25px;
         }
 
-        h2{
-            color: black;
-            font-size: 20px;
-        }
-
-        h1{
+        h1 {
             text-align: center;
+            color: #202020;
             font-size: 40px;
-            color: rgb(29, 29, 29);
+        }
+
+        p {
+            font-size: 18px;
             margin-top: 20px;
         }
 
-        .contenedor{
-            
-            border-color: black;
-            padding: 10px;
-            margin: 10px;
-            color: black;
-            margin-left: 40px;
-            font-size: 200px;
-
-
+        select {
+            padding: 8px;
         }
 
+        .opciones {
+            padding: 10px;
+        }
 
+        .boton {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        
+
+        hr {
+            border: 1px solid hsl(120, 30%, 60%);
+        }
     </style>
 </head>
+
 <body>
-    <h1>RECIBO TELEFONICO</h1>
 
-    <div id=".contenedor">
+    <h1>RECIBO TELEFÓNICO</h1>
 
-        <hr>
-        <h2>Minutos de llamadas a celular (1.00c/u)</h2>
-        <input type="number" required>
+    <div class="contenedor">
 
-        <hr>
+        
+
+        <form>
+
+            <p>Minutos de llamadas ($1.00 c/u):</p>
+            <input type="text" name="minutos" inputmode="numeric">
+
+            <hr>
+
+            <p>Tipo de plan:</p>
+
+            <div class="opciones">
+                <input type="radio" name="plan" value="telefono">
+                Solo teléfono
+
+                <br>
+
+                <input type="radio" name="plan" value="internet">
+                Teléfono + internet
+
+                <br>
+
+                <input type="radio" name="plan" value="completo">
+                Teléfono + internet + TV
+            </div>
+
+            <hr>
+
+            <p>Otros servicios:</p>
+
+            <input type="checkbox" name="servicio" value="antivirus">
+            Antivirus
+
+            <br>
+
+            <input type="checkbox" name="servicio" value="nube">
+            Servicios de nube
+
+            <br>
+
+            <input type="checkbox" name="servicio" value="web">
+            Servicios web
+
+            <hr>
+
+            <p>Paquetes:</p>
+
+            <select name="paquetes">
+                <option value="">Selecciona un paquete</option>
+                <option value="residencial">Residencial</option>
+                <option value="estandar">Estándar</option>
+                <option value="privado">Privado</option>
+            </select>
+
+            <hr>
+
+            <div class="boton">
+                <input type="button" value="Pagar">
+            </div>
+
+        </form>
+
     </div>
-
-    <div id=".tipodeplan">
-        <h2>Tipo de plan</h2>
-        <select name="Lista" id="Lista">
-            <option value="">solo telefono</option>
-            <option value="">Telefono + internet</option>
-            <option value="">Telefono + internet + tv</option>
-        </select>
-
-        <hr>
-    </div>
-
-    <div>
-        <h2>Otros servicios</h2>
-        <select name="" id="">
-            <option value="">Antivirus</option>
-            <option value="">Servicios de nube</option>
-            <option value="">servicios web</option>
-
-        </select>
-
-        <hr>
-
-    </div>
-
-    <div>
-        <h2>Paquetes
-        </h2>
-
-        <select name="" id="">
-            <option value="">Residencial</option>
-            <option value="">Estandar</option>
-            <option value="">Privado</option>
-
-        </select>
-    </div>
-
-    <div>
-        <input type="button" name="calcular Recibo" id="calcular">
-    </div>
-
 
 </body>
 </html>
