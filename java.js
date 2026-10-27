@@ -26,8 +26,26 @@ console.log(username);
 var mayoriaDeEdad = "false";
 console.log(mayoriaDeEdad);
 
+
 //=========================================================================
 
 alert(username);
 username = prompt("Escribe el nombre de nuevo");
-alert("Mi nombre es: "+ username + ". Y mi edad es de: " + edad + ");
+alert("Mi nombre es: " + username)
+
+
+prompt ("Escribe una edad")
+
+if (edad >= 18) {
+    mayoriaDeEdad = true;
+    alert ("tu eres mayor de edad")
+}
+
+if (username == "pedro") {
+  
+    alert ("saludos " + username)
+}
+
+prompt("Cual es tu estatura?")
+if (estatura <= "1.50")
+alert ("Eres un niño")
