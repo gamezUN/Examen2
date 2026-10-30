@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,19 +47,19 @@
             margin-top: 25px;
         }
 
-        
-
         hr {
             border: 1px solid hsl(120, 30%, 60%);
         }
+
+        #resultado {
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 85%;
+            font-size: 18px;
+        }
     </style>
-
-    <script>
-        alert('saludos a mi hermoso mundo que me vio nacer');
-        
-
-    </script>
-
 </head>
 
 <body>
@@ -68,26 +68,22 @@
 
     <div class="contenedor">
 
-        
-
-        <form>
+        <form id="formulario">
 
             <p>Minutos de llamadas ($1.00 c/u):</p>
-            <input type="text" name="minutos" inputmode="numeric">
+            <input type="number" id="minutos" name="minutos" min="0" required>
 
             <hr>
 
             <p>Tipo de plan:</p>
 
             <div class="opciones">
-                <input type="radio" name="plan" value="telefono">
+                <input type="radio" name="plan" value="telefono" required>
                 Solo teléfono
-
                 <br>
 
                 <input type="radio" name="plan" value="internet">
                 Teléfono + internet
-
                 <br>
 
                 <input type="radio" name="plan" value="completo">
@@ -100,12 +96,10 @@
 
             <input type="checkbox" name="servicio" value="antivirus">
             Antivirus
-
             <br>
 
             <input type="checkbox" name="servicio" value="nube">
             Servicios de nube
-
             <br>
 
             <input type="checkbox" name="servicio" value="web">
@@ -115,7 +109,7 @@
 
             <p>Paquetes:</p>
 
-            <select name="paquetes">
+            <select name="paquetes" required>
                 <option value="">Selecciona un paquete</option>
                 <option value="residencial">Residencial</option>
                 <option value="estandar">Estándar</option>
@@ -125,16 +119,48 @@
             <hr>
 
             <div class="boton">
-                <input type="submit" onclick="alert('Esto esta pagado')" value="Pagar">
+                <button type="submit" onclick="procesar()">Calcular</button>
             </div>
 
         </form>
 
     </div>
+    <div id="resultado"></div>
+
+
+
     <script>
-        console.log('Hola desde la consola del desarrollador');
-        
+
+        function procesar() {
+            event.preventDefault();
+            let minutos = document.getElementById("minutos");
+
+            let cantidad = minutos.value;
+            let costoMinutos = cantidad * 1;
+
+            let plan = document.querySelector('input[name="plan"]:checked').value;
+            let costoPlan = 0;
+
+            if (plan == "telefono") {
+                costoPlan = 100;
+            }
+
+            if (plan == "internet") {
+                costoPlan = 200;
+            }
+
+            if (plan == "completo") {
+                costoPlan = 300;
+            }
+
+            let total = costoMinutos + costoPlan;
+
+            alert("El total a pagar es: $" + total);
+        }
     </script>
-    <script src="java.js"></script>
+
+
+
 </body>
+
 </html>

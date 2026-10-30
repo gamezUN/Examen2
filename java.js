@@ -34,18 +34,18 @@ username = prompt("Escribe el nombre de nuevo");
 alert("Mi nombre es: " + username)
 
 
-prompt ("Escribe una edad")
+prompt("Escribe una edad")
 
 if (edad >= 18) {
     mayoriaDeEdad = true;
-    alert ("tu eres mayor de edad")
+    alert("tu eres mayor de edad")
 }
 
 if (username == "pedro") {
-  
-    alert ("saludos " + username)
+
+    alert("saludos " + username)
 }
 
 prompt("Cual es tu estatura?")
 if (estatura <= "1.50")
-alert ("Eres un niño")
+    alert("Eres un niño")
