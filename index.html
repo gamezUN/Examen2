@@ -141,6 +141,7 @@
             let plan = document.querySelector('input[name="plan"]:checked').value;
             let costoPlan = 0;
 
+
             if (plan == "telefono") {
                 costoPlan = 100;
             }
@@ -152,6 +153,28 @@
             if (plan == "completo") {
                 costoPlan = 300;
             }
+
+
+
+            let servicios = document.querySelectorAll('input[name="servicio"]:checked');
+            let costoServicios = servicios.length * 30;
+
+            let paquete = document.querySelector('select[name="paquetes"]').value;
+
+            let costoPaquete = 0;
+
+            if (paquete == "residencial") {
+                costoPaquete = 200;
+            }
+
+            if (paquete == "estandar") {
+                costoPaquete = 300;
+            }
+
+            if (paquete == "privado") {
+                costoPaquete = 400;
+            }
+
 
             let total = costoMinutos + costoPlan;
 
@@ -165,7 +188,7 @@
                 "Costo del plan: $" + costoPlan + "<br>" +
                 "<hr>" +
                 "<h2>TOTAL A PAGAR: $" + total + "</h2>";
-                
+
         }
     </script>
 
