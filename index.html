@@ -156,6 +156,16 @@
             let total = costoMinutos + costoPlan;
 
             alert("El total a pagar es: $" + total);
+            let resultado = document.getElementById("resultado");
+
+            resultado.innerHTML =
+                "<h2>RECIBO TELEFÓNICO</h2>" +
+                "Minutos utilizados: " + cantidad + "<br>" +
+                "Costo de llamadas: $" + costoMinutos + "<br>" +
+                "Costo del plan: $" + costoPlan + "<br>" +
+                "<hr>" +
+                "<h2>TOTAL A PAGAR: $" + total + "</h2>";
+                
         }
     </script>
 
