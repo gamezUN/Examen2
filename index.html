@@ -155,9 +155,28 @@
             }
 
 
-
             let servicios = document.querySelectorAll('input[name="servicio"]:checked');
-            let costoServicios = servicios.length * 30;
+
+            let costoServicios = 0;
+
+            servicios.forEach(function (servicio) {
+
+                if (servicio.value == "antivirus") {
+                    costoServicios = costoServicios + 30;
+                }
+
+                if (servicio.value == "nube") {
+                    costoServicios = costoServicios + 40;
+                }
+
+                if (servicio.value == "web") {
+                    costoServicios = costoServicios + 50;
+                }
+
+            });
+
+
+
 
             let paquete = document.querySelector('select[name="paquetes"]').value;
 
@@ -176,7 +195,7 @@
             }
 
 
-            let total = costoMinutos + costoPlan;
+            let total = costoMinutos + costoPlan + costoServicios + costoPaquete;
 
             alert("El total a pagar es: $" + total);
             let resultado = document.getElementById("resultado");
@@ -186,6 +205,8 @@
                 "Minutos utilizados: " + cantidad + "<br>" +
                 "Costo de llamadas: $" + costoMinutos + "<br>" +
                 "Costo del plan: $" + costoPlan + "<br>" +
+                "<br>Costo de otros servicios: $" + costoServicios +
+                "<br>Costo del paquete: $" + costoPaquete +
                 "<hr>" +
                 "<h2>TOTAL A PAGAR: $" + total + "</h2>";
 
